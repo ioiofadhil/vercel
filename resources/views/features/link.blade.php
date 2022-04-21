@@ -47,8 +47,8 @@
                                     <ul>
                                         <li class="blockquote mb-0">
                                             <p><a target="_blank"
-                                                    href="https://ioiofadhil.herokuapp.com/{{ $links->link }}"
-                                                    class="text-decoration-none text-dark">https://ioiofadhil.herokuapp.com/{{ $links->link ?? '' }}</a>
+                                                    href="https://ioio-porto.herokuapp.com/{{ $links->link }}"
+                                                    class="text-decoration-none text-dark">https://ioio-porto.herokuapp.com/{{ $links->link ?? '' }}</a>
                                             </p>
                                             <footer class="blockquote-footer"><a target="_blank" href="{{ $links->url }}"
                                                     class="text-decoration-none text-dark">{{ $links->url }}</a>
