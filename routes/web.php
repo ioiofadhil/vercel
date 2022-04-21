@@ -144,11 +144,17 @@ Route::get('/link', function () {
 Route::post('/link/create', function (Request $request) {
 
     $validatedLink = $request->validate([
-        'link' => 'required|unique:links',
+        'link' => 'required',
         'url' => 'required|url',
     ]);
 
     $validatedLink['user_id'] = Auth::user()->id;
+
+    $validLink = Link::where('user_id', $validatedLink['user_id'])->where('link', $validatedLink['link'])->first();
+
+    if ($validLink) {
+        return back()->with('error', 'Link already taken by you! Check again your link and choose another link!');
+    }
 
     Link::create($validatedLink);
 
@@ -158,7 +164,7 @@ Route::post('/link/create', function (Request $request) {
 Route::get('/{link}', function ($link) {
 
     if (auth()->check()) {
-        $slug = Link::where('link', $link)->first();
+        $slug = Link::where('user_id', Auth::user()->id)->where('link', $link)->first();
 
         if ($slug) {
 
