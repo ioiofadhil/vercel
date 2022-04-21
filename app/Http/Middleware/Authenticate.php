@@ -16,6 +16,8 @@ class Authenticate extends Middleware
     {
         if (!$request->expectsJson()) {
 
+            session()->flash('message', 'You must log in to access features.');
+
             return route('login');
         }
     }

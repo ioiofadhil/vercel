@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-8 text-dark">
-                    <p class="text-end text-white"><i class="bi bi-people"></i> Links Beautified
+                    <p class="text-end text-white"><i class="bi bi-people"></i> Links Beautified in this Website
                         : {{ $count }}</p>
                     <div class=" card">
                         <div class="card-header">
