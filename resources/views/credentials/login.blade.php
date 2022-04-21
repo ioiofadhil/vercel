@@ -22,7 +22,7 @@
                 <h2 class="text-center fw-bold pb-4">Login</h2>
                 <form method="post" action="/login">
                     @csrf
-                    <input type="text" name="back" value="{{ $back }}">
+                    <input type="hidden" name="back" value="{{ $back }}">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" name="email" class="form-control" id="email" required
