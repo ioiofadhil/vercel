@@ -36,14 +36,14 @@
                 <div class="col-md-4"></div>
 
                 <div class="col-md-12 text-center pb-3">
-
                     <h4>Beautify your links!</h4>
                     <h5>Your links are protected! Nobody can hit or access your beauty link via URL bar.</h5>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-8 text-dark">
-
-                    <div class="card">
+                    <p class="text-end text-white"><i class="bi bi-people"></i> Links Saved
+                        : {{ $count }}</p>
+                    <div class=" card">
                         <div class="card-header">
                             Your Links
                         </div>
@@ -90,7 +90,8 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 @csrf
-                                                                <label for="basic-url" class="form-label">Your Beauty
+                                                                <label for="basic-url" class="form-label">Your
+                                                                    Beauty
                                                                     URL</label>
                                                                 <div class="input-group mb-3">
                                                                     <span class="input-group-text"

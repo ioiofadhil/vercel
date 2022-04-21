@@ -22,7 +22,9 @@ Route::get('/', function () {
 
     $active = 'home';
 
-    return view('pages.index', compact('active'));
+    $count = User::count();
+
+    return view('pages.index', compact('active', 'count'));
 });
 
 Route::get('/about', function () {
@@ -113,11 +115,13 @@ Route::get('/link', function () {
 
     $link = Link::where('user_id', Auth::user()->id)->paginate(6);
 
+    $count = Link::count();
+
     if ($link->first() === null) {
         $link = null;
-        return view('features.link', compact('active', 'link'));
+        return view('features.link', compact('active', 'link', 'count'));
     }
-    return view('features.link', compact('active', 'link'));
+    return view('features.link', compact('active', 'link', 'count'));
 })->middleware('auth');
 
 Route::post('/link/create', function (Request $request) {

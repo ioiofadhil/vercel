@@ -18,6 +18,8 @@
                         @auth
                             <h1 class="text-center">Welcome, {{ Auth::user()->username }} !</h1>
                             <div class="a" data-aos="fade-up" data-aos-duration="2000">
+                                <p class="text-end text-white"><i class="bi bi-people"></i> Users
+                                    now : {{ $count }}</p>
                                 <a href="/link" class="text-white">Tap here to visit the latest feature! &raquo;
                                 </a>
                             </div>
@@ -28,6 +30,8 @@
                                 <span class="input-cursor-2"></span>
                             </div>
                             <div class="ab" data-aos="fade-up" data-aos-duration="2000">
+                                <p class="text-end text-white"><i class="bi bi-people"></i> Users
+                                    now : {{ $count }}</p>
                                 <a href="/login" class="text-white">Login here to access features! &raquo;
                                 </a>
                             </div>
