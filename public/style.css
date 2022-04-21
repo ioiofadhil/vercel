@@ -1,0 +1,232 @@
+body {
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    font-family: Garamond;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: thin;
+    /* Firefox */
+    overflow-x: hidden;
+
+}
+
+.navbar {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 9999999999;
+}
+
+.alert {
+    z-index: 999999999999999999999999 !important;
+    position: absolute;
+    width: 100% !important;
+    left: 0;
+    text-align: center !important;
+}
+
+.contact p {
+    font-size: 12px;
+}
+
+.form-group {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#myVideo {
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(50%);
+
+}
+
+.video-background-holder {
+    position: relative;
+    background-color: black;
+    height: 100%;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-background-holder video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.video-background-content a {
+    font-size: 12px;
+}
+
+.video-background-content img {
+    width: 240 !important;
+    height: 240 !important;
+}
+
+.projects a {
+    font-size: 13;
+}
+
+.projects a:hover {
+    text-decoration: underline !important;
+}
+
+.projects li {
+    line-height: 2.5;
+}
+
+.video-background-content a:hover {
+    color: rgb(202, 126, 11) !important;
+}
+
+.video-background-content {
+    position: relative;
+    z-index: 2;
+}
+
+.video-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.programs img {
+    width: 40%;
+    height: auto;
+}
+
+.laravel {
+    height: 120px !important;
+}
+
+.node {
+    width: 20% !important;
+    height: 120px !important;
+}
+
+.social {
+    letter-spacing: 3px;
+}
+
+.social p {
+    font-weight: 700;
+}
+
+.icon {
+    letter-spacing: 16px !important;
+}
+
+.h-80 {
+    height: 100% !important;
+}
+
+.py-50 {
+    padding-top: 100px !important;
+    padding-bottom: 50px !important;
+}
+
+.pt-50 {
+    padding-top: 100px !important;
+}
+
+.checkbox {
+    font-size: 12px;
+    padding-top: -12px;
+}
+
+.vht-10 {
+    padding-top: 10vh;
+}
+
+.vht-20 {
+    padding-top: 20vh;
+}
+
+.vht-20-mobile {
+    padding-top: 13vh;
+}
+
+.vht-25-mobile {
+    padding-top: 25vh;
+}
+
+.vhb-20 {
+    padding-bottom: 20vh;
+}
+
+.vht-30 {
+    padding-top: 30vh;
+}
+
+.vht-30-mobile {
+    padding-top: 30vh;
+}
+
+.vht-40 {
+    padding-top: 40vh;
+}
+
+.vhb-40 {
+    padding-bottom: 40vh;
+}
+
+.a {
+    padding-top: 30vh !important;
+    text-align: right;
+}
+
+hr {
+    border: 0;
+    border-top: 3px solid rgb(255, 255, 255);
+}
+
+table tr td,
+table tr th {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+@media only screen and (max-width: 450px) {
+
+    .vht-20-mobile {
+        padding-top: 15vh;
+    }
+
+    .vht-25-mobile {
+        padding-top: 15vh;
+    }
+
+    .vht-30-mobile {
+        padding-top: 15vh !important;
+    }
+
+    .first {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+    }
+}
