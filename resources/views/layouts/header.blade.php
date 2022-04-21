@@ -3,11 +3,12 @@
         <a class="navbar-brand"
             style="font-size:30px !important; font-family: Brush Script MT, cursive !important;margin-top:1px; font-weight:lighter !important;"
             href="/"> Ioiofadhil</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler active" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span style="font-size: 15px" class="active text-white">MENU</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div class="navbar-nav me-auto">
                 <a class="nav-link @if ($active === 'home') active @endif" aria-current="page" href="/">Home</a>
                 <a class="nav-link @if ($active === 'projects') active @endif" href="/projects">Projects</a>

@@ -216,6 +216,11 @@ table tr th {
 
 @media only screen and (max-width: 450px) {
 
+
+    .bg-transparent {
+        background-color: #292b2c !important;
+    }
+
     .footer {
         position: relative;
     }
