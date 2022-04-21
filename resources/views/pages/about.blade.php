@@ -1,12 +1,10 @@
 @extends('layouts.main')
-
 @section('content')
-    <video autoplay muted loop playsinline id="myVideo">
-        <source src="https://res.cloudinary.com/ioiofadhil/video/upload/v1647116060/video2_uspoaz.mp4" type="video/mp4">
+    <video autoplay="true" muted loop playsinline id="myVideo">
+        <source src="https://res.cloudinary.com/ioiofadhil/video/upload/v1647196841/People_walk_on_a_rocky_coast_hqjpew.mp4"
+            type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-
-
     <div class="container vht-20-mobile text-white text-center" data-aos="fade-up" data-aos-duration="2000">
         <div class="row">
             <div class="typing-container">

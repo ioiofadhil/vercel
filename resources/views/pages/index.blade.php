@@ -27,6 +27,10 @@
                                 <h1 id="feature-text-two"></h1>
                                 <span class="input-cursor-2"></span>
                             </div>
+                            <div class="ab" data-aos="fade-up" data-aos-duration="2000">
+                                <a href="/login" class="text-white">Login here to access features! &raquo;
+                                </a>
+                            </div>
                         @endauth
                     </div>
                 </div>

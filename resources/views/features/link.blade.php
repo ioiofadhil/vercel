@@ -1,12 +1,7 @@
 @extends('layouts.main')
 <style>
     body {
-        background-color: #1c1a21 !important;
-    }
-
-    .footer {
-        position: fixed;
-        bottom: 0;
+        background-color: #1f3252 !important;
     }
 
 </style>
@@ -16,6 +11,11 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4 position-relative">
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">{{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     @error('link')
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">{{ $message }}
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -32,7 +32,7 @@
                 <div class="col-md-12 text-center pb-3">
 
                     <h4>Beautify your links!</h4>
-                    <p>Your links are protected! Nobody can use or access your beauty link via URL bar.</p>
+                    <h5>Your links are protected! Nobody can hit or access your beauty link via URL bar.</h5>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-8 text-dark">
@@ -42,34 +42,45 @@
                             Your Links
                         </div>
                         <div class="card-body">
-                            @if ($link)
-                                @foreach ($link as $links)
-                                    <ul>
-                                        <li class="blockquote mb-0">
-                                            <p><a target="_blank"
-                                                    href="https://ioio-porto.herokuapp.com/{{ $links->link }}"
-                                                    class="text-decoration-none text-dark">https://ioio-porto.herokuapp.com/{{ $links->link ?? '' }}</a>
-                                            </p>
-                                            <footer class="blockquote-footer"><a target="_blank" href="{{ $links->url }}"
-                                                    class="text-decoration-none text-dark">{{ $links->url }}</a>
-                                            </footer>
-                                            <a href="" class="text-decoration-none text-success"><i
-                                                    class="bi bi-pencil-square"></i>
+                            <div class="row">
+                                @if ($link !== null)
+                                    @foreach ($link as $links)
+                                        <div class="col-md-6">
+                                            <ul>
+                                                <li style="font-size: 19px" class="blockquote mb-0">
+                                                    <p class="mb-0"><a target="_blank"
+                                                            href="https://ioio-porto.herokuapp.com/{{ $links->link }}"
+                                                            class="text-decoration-none text-dark">{{ $links->link }}</a>
+                                                    </p>
+                                                    <a href="https://ioio-porto.herokuapp.com/{{ $links->link }}"
+                                                        class="d-block text-decoration-none" style="font-size: 14px">
+                                                        https://ioio-porto.herokuapp.com/{{ $links->link }}</a>
 
-                                            </a>
-                                            &nbsp;-
-                                            <a href="" class="text-decoration-none text-danger"><i
-                                                    class="bi bi-trash"></i>
-                                            </a>
-                                        </li>
+                                                    <a href="" class="text-decoration-none text-success"><i
+                                                            class="bi bi-pencil-square"></i>
 
-                                    </ul>
-                                @endforeach
-                            @endif
-                            {{-- Pagination --}}
-                            <div class="d-flex justify-content-center">
-                                {!! $link->links() !!}
+                                                    </a>
+                                                    &nbsp;-
+                                                    <a href="/{{ $links->id }}/delete"
+                                                        class="text-decoration-none text-danger"><i
+                                                            class="bi bi-trash"></i>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <p class="text-center">You don't have any links yet!</p>
+                                @endif
                             </div>
+
+                            @if ($link !== null)
+                                {{-- Pagination --}}
+                                <div class="d-flex justify-content-center">
+                                    {!! $link->links() !!}
+                                </div>
+                            @endif
                             <!-- Button trigger modal -->
                             <div class="text-end">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -93,7 +104,7 @@
                                                     URL</label>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text"
-                                                        id="basic-addon3">https://ioiofadhil.herokuapp.com/</span>
+                                                        id="basic-addon3">https://ioio-porto.herokuapp.com/</span>
                                                     <input type="text" name="link" class="form-control" id="basic-url"
                                                         aria-describedby="basic-addon3" placeholder="ioiofadhil">
                                                 </div>

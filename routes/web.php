@@ -111,8 +111,12 @@ Route::get('/link', function () {
 
     $active = 'link';
 
-    $link = Link::where('user_id', Auth::user()->id)->paginate(2);
+    $link = Link::where('user_id', Auth::user()->id)->paginate(6);
 
+    if ($link->first() === null) {
+        $link = null;
+        return view('features.link', compact('active', 'link'));
+    }
     return view('features.link', compact('active', 'link'));
 })->middleware('auth');
 
@@ -141,4 +145,13 @@ Route::get('/{link}', function ($link) {
     }
 
     return abort(404);
+});
+
+Route::get('/{id}/delete', function ($id) {
+
+    $delete = Link::find($id);
+
+    $delete->delete();
+
+    return redirect('link')->with('success', 'Link Successfully Deleted!');
 });

@@ -198,6 +198,10 @@ body {
     text-align: right;
 }
 
+.ab {
+    text-align: right;
+}
+
 hr {
     border: 0;
     border-top: 3px solid rgb(255, 255, 255);
