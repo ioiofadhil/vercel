@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
+
+
     $active = 'home';
 
     $count = User::count();
@@ -43,9 +45,12 @@ Route::get('/contact', function () {
 
 Route::get('/login', function () {
 
+
+    $back = back()->getTargetUrl();
+
     $active = 'login';
 
-    return view('credentials.login', compact('active'));
+    return view('credentials.login', compact('active', 'back'));
 });
 
 Route::post('/login', function (Request $request) {
@@ -56,9 +61,21 @@ Route::post('/login', function (Request $request) {
         'password' => 'required',
     ]);
 
+    $basename = basename(parse_url($request->back, PHP_URL_PATH));
+
+    $findLink = Link::where('link', $basename)->first();
+
     // login session
     if (Auth::attempt($credentials)) {
+
         $request->session()->regenerate();
+
+        if ($findLink) {
+
+            $slug = $findLink->where('user_id', Auth::user()->id)->first();
+
+            return redirect($slug->url);
+        }
 
         return redirect()->intended('/')->with('success', 'Login Success!');
     }
@@ -113,7 +130,7 @@ Route::get('/link', function () {
 
     $active = 'link';
 
-    $link = Link::where('user_id', Auth::user()->id)->paginate(6);
+    $link = Link::where('user_id', Auth::user()->id)->paginate(4);
 
     $count = Link::count();
 
@@ -149,7 +166,7 @@ Route::get('/{link}', function ($link) {
     }
 
     return abort(404);
-});
+})->middleware('auth')->name('slug');
 
 Route::get('/{id}/delete', function ($id) {
 
