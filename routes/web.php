@@ -150,8 +150,18 @@ Route::get('/{link}', function ($link) {
 Route::get('/{id}/delete', function ($id) {
 
     $delete = Link::find($id);
-
     $delete->delete();
 
     return redirect('link')->with('success', 'Link Successfully Deleted!');
+});
+
+Route::post('/{id}/update', function ($id, Request $request) {
+
+    $update = Link::find($id);
+    $update->link = $request->link;
+    $update->url = $request->url;
+
+    $update->save();
+
+    return redirect('link')->with('success', 'Link Successfully Updated!');
 });

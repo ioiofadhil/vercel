@@ -1,11 +1,17 @@
 @extends('layouts.main')
 <style>
-    body {
-        background-color: #1f3252 !important;
+    .footer {
+        position: fixed;
+        bottom: 0;
     }
 
 </style>
 @section('content')
+    <video autoplay muted loop playsinline id="myVideo">
+        <source src="https://res.cloudinary.com/ioiofadhil/video/upload/v1647196841/People_walk_on_a_rocky_coast_hqjpew.mp4"
+            type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
     <div class="container vht-20-mobile text-white">
         <div class="container">
             <div class="row">
@@ -56,10 +62,12 @@
                                                         class="d-block text-decoration-none" style="font-size: 14px">
                                                         https://ioio-porto.herokuapp.com/{{ $links->link }}</a>
 
-                                                    <a href="" class="text-decoration-none text-success"><i
-                                                            class="bi bi-pencil-square"></i>
-
-                                                    </a>
+                                                    <button
+                                                        style="margin-right: -13px; margin-top: -4px; margin-left: -13px;"
+                                                        type="button" class="btn btn-link text-success pb-2"
+                                                        data-bs-toggle="modal" data-bs-target="#{{ $links->link }}">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </button>
                                                     &nbsp;-
                                                     <a href="/{{ $links->id }}/delete"
                                                         class="text-decoration-none text-danger"><i
@@ -68,6 +76,53 @@
                                                 </li>
 
                                             </ul>
+                                            <form action="/{{ $links->id }}/update" method="post">
+                                                <div class="modal fade" id="{{ $links->link }}" tabindex="-1"
+                                                    aria-labelledby="createLinkLabel" aria-hidden="true"
+                                                    style="z-index: 9999999999999999999999999">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="createLinkLabel">
+                                                                    {{ $links->link }}</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                @csrf
+                                                                <label for="basic-url" class="form-label">Your Beauty
+                                                                    URL</label>
+                                                                <div class="input-group mb-3">
+                                                                    <span class="input-group-text"
+                                                                        id="basic-addon3">https://ioio-porto.herokuapp.com/</span>
+                                                                    <input type="text" name="link" class="form-control"
+                                                                        id="basic-url" aria-describedby="basic-addon3"
+                                                                        placeholder="ioiofadhil"
+                                                                        value="{{ $links->link }}">
+                                                                </div>
+
+
+                                                                <label for="basic-url" class="form-label">Your
+                                                                    URL</label>
+                                                                <div class="input-group mb-3">
+                                                                    <input type="text" name="url" class="form-control"
+                                                                        id="basic-url" aria-describedby="basic-addon3"
+                                                                        placeholder="https://www.beritaku.com/url-that-you-want-to-beautify"
+                                                                        value="{{ $links->url }}">
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     @endforeach
                                 @else

@@ -18,7 +18,7 @@
     <div class="container mt-5 text-center" data-aos="flip-right" data-aos-duration="2000">
         <div class="row">
             <div class="col-md-12">
-                <img src="/img/gio.png" alt="Giofadhil" class="rounded-circle mb-5 img-thumbnail" width="170" height="170">
+                <img src="/img/gio.jpg" alt="Giofadhil" class="rounded-circle mb-5 img-thumbnail" width="170" height="170">
             </div>
         </div>
     </div>

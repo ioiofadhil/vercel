@@ -199,6 +199,8 @@ body {
 }
 
 .ab {
+    padding-top: 30vh !important;
+    margin-bottom: -30vh;
     text-align: right;
 }
 
@@ -213,6 +215,10 @@ table tr th {
 }
 
 @media only screen and (max-width: 450px) {
+
+    .footer {
+        position: relative;
+    }
 
     .vht-20-mobile {
         padding-top: 15vh;

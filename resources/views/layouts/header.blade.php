@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container">
-        <a class="navbar-brand" href="/">ioio</a>
+        <a class="navbar-brand"
+            style="font-size:30px !important; font-family: Brush Script MT, cursive !important;margin-top:1px; font-weight:lighter !important;"
+            href="/"> Ioiofadhil</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
