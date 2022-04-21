@@ -29,9 +29,10 @@
                 </div>
                 <div class="col-md-4"></div>
 
-                <div class="col-md-12 text-center pb-5">
+                <div class="col-md-12 text-center pb-3">
 
                     <h4>Beautify your links!</h4>
+                    <p>Your links are protected! Nobody can use or access your beauty link via URL bar.</p>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-8 text-dark">
@@ -45,11 +46,12 @@
                                 @foreach ($link as $links)
                                     <ul>
                                         <li class="blockquote mb-0">
-                                            <p><a target="_blank" href="{{ $links->url }}"
-                                                    class="text-decoration-none text-dark">{{ $links->link ?? '' }}</a>
+                                            <p><a target="_blank"
+                                                    href="https://ioiofadhil.herokuapp.com/{{ $links->link }}"
+                                                    class="text-decoration-none text-dark">https://ioiofadhil.herokuapp.com/{{ $links->link ?? '' }}</a>
                                             </p>
                                             <footer class="blockquote-footer"><a target="_blank" href="{{ $links->url }}"
-                                                    class="text-decoration-none text-dark">{{ $links->url ?? '' }}</a>
+                                                    class="text-decoration-none text-dark">{{ $links->url }}</a>
                                             </footer>
                                             <a href="" class="text-decoration-none text-success"><i
                                                     class="bi bi-pencil-square"></i>
@@ -64,9 +66,13 @@
                                     </ul>
                                 @endforeach
                             @endif
+                            {{-- Pagination --}}
+                            <div class="d-flex justify-content-center">
+                                {!! $link->links() !!}
+                            </div>
                             <!-- Button trigger modal -->
                             <div class="text-end">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#createLink">
                                     New Link
                                 </button>

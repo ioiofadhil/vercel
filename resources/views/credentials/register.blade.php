@@ -10,17 +10,39 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 position-relative">
 
+                @error('username')
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">{{ $message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @enderror
+
+                @error('email')
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">{{ $message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @enderror
+
+                @error('password')
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">{{ $message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @enderror
+
                 <h2 class="text-center fw-bold pb-4">Register</h2>
                 <form method="post" action="/register">
                     @csrf
                     <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control" id="username"
+                            placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" required
-                            placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" required
+                        <input type="password" name="password" class="form-control" id="password"
                             placeholder="Enter password">
                     </div>
                     <input type="checkbox" onclick="myFunction()">

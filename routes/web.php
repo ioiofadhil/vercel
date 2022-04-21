@@ -84,6 +84,7 @@ Route::post('/register', function (Request $request) { {
 
         // validating the data input
         $validatedRegister = $request->validate([
+            'username' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:5',
         ]);
@@ -110,7 +111,7 @@ Route::get('/link', function () {
 
     $active = 'link';
 
-    $link = Link::where('user_id', Auth::user()->id)->get();
+    $link = Link::where('user_id', Auth::user()->id)->paginate(2);
 
     return view('features.link', compact('active', 'link'));
 })->middleware('auth');
@@ -134,7 +135,7 @@ Route::get('/{link}', function ($link) {
     if (auth()->check()) {
         $slug = Link::where('link', $link)->first();
 
-        if ($slug) {
+        if (auth()->user()->id == $slug->user_id) {
             return redirect($slug->url);
         }
     }

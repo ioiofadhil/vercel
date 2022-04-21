@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator as PaginationPaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        PaginationPaginator::useBootstrap();
         view()->composer('*', function ($view) {
             if (Auth::check()) {
                 $username = Auth::user()->username;

@@ -35,6 +35,11 @@ return [
 
     'connections' => [
 
+        'mongodb_conn' => [
+            'driver' => 'mongodb',
+            'dsn' => 'mongodb://express-js-ioio-mongo:Giofadhil555@heroku-shard-00-00.i6nyw.mongodb.net:27017,heroku-shard-00-01.i6nyw.mongodb.net:27017,heroku-shard-00-02.i6nyw.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-lka1yq-shard-0&authSource=admin&retryWrites=true&w=majority',
+            'database' => env('DB_DATABASE', 'homestead'),
+        ],
         'mongodb' => [
             'driver' => 'mongodb',
             'host' => env('DB_HOST', '127.0.0.1'),
