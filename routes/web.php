@@ -160,12 +160,21 @@ Route::get('/{link}', function ($link) {
     if (auth()->check()) {
         $slug = Link::where('link', $link)->first();
 
-        if (auth()->user()->id == $slug->user_id) {
-            return redirect($slug->url);
+        if ($slug) {
+
+            if (auth()->user()->id == $slug->user_id) {
+                return redirect($slug->url);
+            }
         }
+
+        session()->flash('notFound', 'Your URL not found! Please check again!');
+
+        return redirect('/link');
     }
 
-    return abort(404);
+    session()->flash('notFound', 'Your URL not found! Please check again!');
+
+    return redirect('/link');
 })->middleware('auth')->name('slug');
 
 Route::get('/{id}/delete', function ($id) {
