@@ -37,8 +37,8 @@
                         </ul>
                     </li>
                 @else
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link  @if ($active === 'login') active @endif" href="/login">Login</a>
+                    <a class="nav-link  @if ($active === 'register') active @endif" href="/register">Register</a>
                 @endauth
             </div>
         </div>

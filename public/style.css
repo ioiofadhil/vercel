@@ -216,6 +216,13 @@ table tr th {
 
 @media only screen and (max-width: 450px) {
 
+    .dropdown-menu-dark {
+        background-color: #292b2c!important;
+    }
+
+    .dropdown-menu-dark:hover {
+        background-color: #000000!important;
+    }
 
     .bg-transparent {
         background-color: #292b2c !important;
