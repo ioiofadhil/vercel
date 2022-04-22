@@ -60,12 +60,12 @@
                                             <ul>
                                                 <li style="font-size: 19px" class="blockquote mb-0">
                                                     <p class="mb-0"><a target="_blank"
-                                                            href="https://ioio-porto.herokuapp.com/{{ $links->link }}"
+                                                            href="https://gioio.herokuapp.com/{{ $links->link }}"
                                                             class="text-decoration-none text-dark">{{ $links->link }}</a>
                                                     </p>
-                                                    <a href="https://ioio-porto.herokuapp.com/{{ $links->link }}"
+                                                    <a href="https://gioio.herokuapp.com/{{ $links->link }}"
                                                         class="d-block text-decoration-none" style="font-size: 14px">
-                                                        https://ioio-porto.herokuapp.com/{{ $links->link }}</a>
+                                                        https://gioio.herokuapp.com/{{ $links->link }}</a>
 
                                                     <button
                                                         style="margin-right: -13px; margin-top: -4px; margin-left: -13px;"
@@ -100,7 +100,7 @@
                                                                     URL</label>
                                                                 <div class="input-group mb-3">
                                                                     <span class="input-group-text"
-                                                                        id="basic-addon3">https://ioio-porto.herokuapp.com/</span>
+                                                                        id="basic-addon3">https://gioio.herokuapp.com/</span>
                                                                     <input type="text" name="link" class="form-control"
                                                                         id="basic-url" aria-describedby="basic-addon3"
                                                                         placeholder="ioiofadhil"
@@ -165,7 +165,7 @@
                                                     URL</label>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text"
-                                                        id="basic-addon3">https://ioio-porto.herokuapp.com/</span>
+                                                        id="basic-addon3">https://gioio.herokuapp.com/</span>
                                                     <input type="text" name="link" class="form-control" id="basic-url"
                                                         aria-describedby="basic-addon3" placeholder="ioiofadhil">
                                                 </div>
